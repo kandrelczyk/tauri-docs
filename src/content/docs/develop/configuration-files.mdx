@@ -1,7 +1,6 @@
 ---
 title: Configuration Files
-sidebar:
-  order: 1
+i18nReady: true
 ---
 
 import CommandTabs from '@components/CommandTabs.astro';
@@ -170,8 +169,9 @@ And to distribute this separate _beta_ app you provide this configuration file w
   npm="npm run tauri build -- --config src-tauri/tauri.beta.conf.json"
   yarn="yarn tauri build --config src-tauri/tauri.beta.conf.json"
   pnpm="pnpm tauri build --config src-tauri/tauri.beta.conf.json"
-  cargo="cargo tauri build --config src-tauri/tauri.beta.conf.json"
   deno="deno task tauri build --config src-tauri/tauri.beta.conf.json"
+  bun="bun tauri build --config src-tauri/tauri.beta.conf.json"
+  cargo="cargo tauri build --config src-tauri/tauri.beta.conf.json"
 />
 
 ## `Cargo.toml`
@@ -208,7 +208,7 @@ Cargo version numbers use [Semantic Versioning]. Running `cargo update` in the `
 If you want to use a specific crate version you can use exact versions instead by prepending `=` to the version number of the dependency:
 
 ```
-tauri-build = { version = "=2.0.0.0" }
+tauri-build = { version = "=2.0.0" }
 ```
 
 An additional thing to take note of is the `features=[]` portion of the `tauri` dependency. Running `tauri dev` and `tauri build` will automatically manage which features need to be enabled in your project based on the your Tauri configuration. For more information about `tauri` feature flags see the [documentation][tauri Cargo features].

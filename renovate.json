@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base", "helpers:pinGitHubActionDigests"],
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
   "cloneSubmodules": true,
   "semanticCommitType": "chore",
   "labels": ["dependencies"],
@@ -7,5 +7,12 @@
   "git-submodules": {
     "enabled": true,
     "schedule": ["every weekend"]
-  }
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": ["/.*astro.*/i", "/.*starlight.*/i", "/.*typedoc.*/i"],
+      "groupName": "astro & starlight packages",
+      "separateMajorMinor": false
+    }
+  ]
 }
